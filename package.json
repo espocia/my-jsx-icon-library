@@ -1,16 +1,20 @@
 {
   "name": "my-jsx-icon-library",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "type": "module",
   "main": "dist/index.js",
-  "exports":{
+  "exports": {
     ".": "./dist/index.js"
   },
   "scripts": {
     "build": "tsc",
     "test": "node dist/index.js"
   },
-  "keywords": ["icons", "svg", "library"],
+  "keywords": [
+    "icons",
+    "svg",
+    "library"
+  ],
   "author": "JJ",
   "license": "ISC",
   "description": "A reusable icon library",
