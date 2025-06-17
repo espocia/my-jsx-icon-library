@@ -19,10 +19,12 @@
   "license": "ISC",
   "description": "A reusable icon library",
   "devDependencies": {
+    "@svgr/core": "^8.1.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "@svgr/plugin-jsx": "^8.1.0",
     "@types/node": "^22.15.30",
     "my-jsx-icon-library": "^0.2.2"
   }
