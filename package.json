@@ -1,6 +1,6 @@
 {
   "name": "my-jsx-icon-library",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "SVG icon library converted to JSX components",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
