@@ -1,31 +1,63 @@
 {
   "name": "my-jsx-icon-library",
-  "version": "0.2.6",
-  "type": "module",
+  "version": "1.0.0",
+  "description": "SVG icon library converted to JSX components",
   "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*",
+    "components/**/*"
+  ],
   "exports": {
-    ".": "./dist/index.js"
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./components/filled/*": {
+      "import": "./components/filled/*.js",
+      "require": "./components/filled/*.js",
+      "types": "./components/filled/*.d.ts"
+    },
+    "./dist/*": "./dist/*"
   },
   "scripts": {
-    "build": "tsc",
-    "test": "node dist/index.js"
+    "convert-icons": "node ./src/convert-icons.js",
+    "build:icons": "npm run convert-icons",
+    "build:compile": "npm run build:cjs && npm run build:esm",
+    "build:cjs": "tsc --project tsconfig.json",
+    "build:esm": "tsc --project tsconfig.esm.json",
+    "build": "npm run build:icons && npm run build:compile",
+    "clean": "rm -rf dist components",
+    "prepublishOnly": "npm run clean && npm run build",
+    "dev": "npm run convert-icons && npm run build:compile"
+  },
+  "peerDependencies": {
+    "@types/react": ">=16.8.0",
+    "react": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@svgr/core": "^8.1.0",
+    "@svgr/plugin-jsx": "^8.1.0",
+    "@svgr/plugin-prettier": "^8.1.0",
+    "@svgr/plugin-svgo": "^8.1.0",
+    "@types/node": "^24.0.3",
+    "@types/react": "^18.3.23",
+    "react": "^18.3.1",
+    "typescript": "^5.8.3"
   },
   "keywords": [
     "icons",
     "svg",
-    "library"
+    "react",
+    "jsx",
+    "typescript",
+    "components"
   ],
-  "author": "JJ",
-  "license": "ISC",
-  "description": "A reusable icon library",
-  "devDependencies": {
-    "@svgr/core": "^8.1.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+  "repository": {
+    "type": "git",
+    "url": "your-repo-url"
   },
-  "dependencies": {
-    "@svgr/plugin-jsx": "^8.1.0",
-    "@types/node": "^22.15.30",
-    "my-jsx-icon-library": "^0.2.2"
-  }
+  "license": "MIT"
 }

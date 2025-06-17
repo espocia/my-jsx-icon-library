@@ -1,0 +1,11 @@
+import * as React from 'react';
+import { SVGProps } from 'react';
+
+const PlayCircle = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 20 20"  {...props}>
+<path fillRule="evenodd" clipRule="evenodd" d="M10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17ZM9.61036 7.52196C9.34186 7.34296 8.99664 7.32627 8.71212 7.47854C8.42761 7.6308 8.25 7.92731 8.25 8.25V11.75C8.25 12.0727 8.42761 12.3692 8.71212 12.5215C8.99664 12.6737 9.34186 12.657 9.61036 12.478L12.2354 10.728C12.4788 10.5658 12.625 10.2926 12.625 10C12.625 9.70744 12.4788 9.43424 12.2354 9.27196L9.61036 7.52196Z" fill="currentColor"/>
+</svg>
+
+);
+
+export default PlayCircle;
