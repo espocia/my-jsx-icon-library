@@ -1,3 +1,3 @@
-export default function main() {
-	console.log("Hello World")
+export default function printMsg() {
+	console.log("all goods here!")
 }
